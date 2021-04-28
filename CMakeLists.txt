@@ -34,8 +34,9 @@ add_library(
      caffe2_detectron_custom_ops SHARED
      ${CUSTOM_OPS_CPU_SRCS})
 
-target_link_libraries(caffe2_detectron_custom_ops caffe2_library)
-install(TARGETS caffe2_detectron_custom_ops DESTINATION lib)
+include_directories(${CAFFE2_INCLUDE_DIRS})
+include_directories(/root/anaconda3/envs/densepose_py2/include)
+include_directories(/opt/intel/mkl/include)
 
 # Install custom GPU ops lib, if gpu is present.
 if (CAFFE2_USE_CUDA OR CAFFE2_FOUND_CUDA)
@@ -47,6 +48,6 @@ if (CAFFE2_USE_CUDA OR CAFFE2_FOUND_CUDA)
       ${CUSTOM_OPS_CPU_SRCS}
       ${CUSTOM_OPS_GPU_SRCS})
 
-  target_link_libraries(caffe2_detectron_custom_ops_gpu caffe2_gpu_library)
+  target_link_libraries(caffe2_detectron_custom_ops_gpu caffe2_gpu)
   install(TARGETS caffe2_detectron_custom_ops_gpu DESTINATION lib)
 endif()

@@ -7,8 +7,8 @@ ENV Caffe2_DIR /usr/local/caffe2_build
 ENV PYTHONPATH /usr/local/caffe2_build:${PYTHONPATH}
 ENV LD_LIBRARY_PATH /usr/local/caffe2_build/lib:${LD_LIBRARY_PATH}
 
-# Clone the Detectron repository
-RUN git clone https://github.com/facebookresearch/densepose /densepose
+# Clone the Detectron repository 1
+RUN git clone https://github.com/chucai2000/DensePose.git /densepose
 
 # Install Python dependencies
 RUN pip install -r /densepose/requirements.txt
