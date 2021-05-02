@@ -1,0 +1,5 @@
+1 Enter the docker
+2 Make sure the repo in the branch "zhimo_dev"
+3 run "conda activate densepose_gpu_py2"
+4 run "python2 setup.py build"
+5 run "cp -r build/lib.linux-x86_64-2.7/detectron/* detectron/"
